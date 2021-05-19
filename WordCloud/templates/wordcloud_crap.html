@@ -1,0 +1,77 @@
+{% extends "layout2.html" %}
+{% block body %}
+  <h1>Login</h1>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+
+<body>
+    <div style = "text-align: center">
+        <h1>
+            <strong>
+                Word Cloud Creator!
+            </strong>
+        </h1>
+    </div>
+
+    <div style= "text-align: center; boarder: 4px solid">
+    <title>Word Cloud Creator</title>
+    </div>
+    <div style= "border: 2px solid">
+    <h2>1st Scraper Data listed here: game.json (static for now, will be pulled from other student microservice in the future, must be in the root directory with app.py)</h2>
+    <h2>2nd Scraper Data listed here: pokemonSnap_keywords.json (static for now, will be pulled from other student microservice in the future, must be in the root directory with app.py)</h2>
+    </div>
+    <br>
+
+
+
+
+
+    <br>
+    <h3>Please use Ctrl+F5 to force reload of page - I am learning how to make flask do this for future iterations</h3>
+    <!-----------------
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script type="text/javascript"> $(function() { $("#mybutton").click(function (event) { $.getJSON('/SomeFunction', { },
+    function(data) { }); return false; }); }); </script>
+    <div style= "text-align: center">
+    <input type="button" id="mybutton" value="Submit">
+    </div>
+    ---------------->
+        <div style= "text-align: center">
+        <p><a href="{{ url_for('wordcloud') }}"><input type="button" id="mybutton2" value="Submit" onclick="{{ url_for('wordcloud') }}"></a></p>
+        <br>
+        </div>
+    <br>
+    <br>
+    <div style= "text-align: center">
+    <img src="\static\wordCloud.png">
+    </div>
+
+</body>
+</html>
+        <br>
+        <br>
+        Jacob Eckroth REST code demonstrating connection to two other microservices
+        <br>
+        <button type="button" id ="catButton" onclick="window.location.href='/restCAT';">Click me to request a cat from this server!</button>
+        <button type="button" id ="dogButton" onclick="window.location.href='/restDOG';">Click me to request a dog from the other server!</button>
+        <br>
+
+  </div>
+</body>
+    <br>
+    <br>
+    <div class="padded-multiline">
+        Top 5 Words!<br>
+        Not implemented yet - hope to have done in a future iteration<br>
+        Blocks - 14<br>
+        Map - 13<br>
+        Avator - 13<br>
+        Building -12<br>
+        Xbox - 11&ensp;<br>
+    </div>
+
+</html>
+
+{% endblock %}
