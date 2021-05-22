@@ -11,6 +11,7 @@
 # https://stackoverflow.com/questions/29104107/upload-image-using-post-form-data-in-python-requests
 # https://stackoverflow.com/questions/29104107/upload-image-using-post-form-data-in-python-requests
 # https://stackoverflow.com/questions/55265779/how-to-jsonify-a-picture-in-flask
+# http://whitenoise.evans.io/en/stable/flask.html
 
 
 import os
@@ -33,6 +34,7 @@ import logging
 import numpy as np
 from PIL import Image
 from io import BytesIO
+import webbrowser
 import PIL.Image
 data = 'foo'
 
@@ -118,8 +120,11 @@ def wordcloud2():
     #need to update the code below to something along the lines of the web address access
     #perhaps something of "did beavis work"
     try:
-        f = open('game.json')
-        f.close()
+        #f = open('game.json')
+        #f.close()
+        #webbrowser.open('https://1drv.ms/u/s!AlvZSaPdNhyBtYwpp3k3WhJxctY2qw?e=DETmKW')
+        #requests.get('https://pastebin.com/raw/W2ez0StJ')
+        requests.get('http://valchin.com/sendjson2021')
     #when error happens then flashing this error will be helpful
     except IOError:
         print('File is not accessible')
@@ -128,7 +133,12 @@ def wordcloud2():
     print('File is accessible')
     flash('You created a word cloud')
     #Need to update this to the proper web address for the word cloud
-    beavis = requests.get('http://127.0.0.4/wordcloud')
+    #beavis = requests.get('http://127.0.0.4/wordcloud')
+
+    #beavis = requests.get('https://pastebin.com/raw/W2ez0StJ')
+
+    beavis = requests.get('http://valchin.com/sendjson2021')
+
     print("out of beavis")
     #Discovered this after way too long - this forces the text out of beavis and into
     #a format that the cloud generator can run
@@ -204,7 +214,8 @@ def wordcloudGet66():
     try:
         #f = open('game.json')
         #webbrowser.get('http://127.0.0.4/wordcloud')
-        requests.get('http://127.0.0.4/wordcloud')
+        #requests.get('http://127.0.0.4/wordcloud')
+        requests.get('http://valchin.com/sendjson2021')
         #f.close()
     #when error happens then flashing this error will be helpful
     except IOError:
